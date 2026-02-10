@@ -1,0 +1,17 @@
+{% extends 'hospital/base.html' %}
+
+{% block content %}
+<h2>Add Patient</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Patient</button>
+</form>
+
+<p>
+    <a href="{% url 'patient_list' %}">Back to Patients List</a> |
+    <a href="{% url 'home' %}">Back to Home</a>
+</p>
+{% endblock %}
+

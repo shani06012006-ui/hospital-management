@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedPlus | Hospital Management</title>
+    <link rel="stylesheet" href="{% static 'hospital/style.css' %}">
+    <link href="" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{% url 'home' %}" class="brand">
+        <img src="{% static 'hospital/images/logo.png' %}" alt="" class = "nav-logo">
+            MedPlus<span>+</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
+            <li><a href="{% url 'patient_list' %}">Patients</a></li>
+            <li><a href="{% url 'appointment_list' %}">Appointments</a></li>
+        </ul>
+
+        <div class="user-actions">
+            {% if user.is_authenticated %}
+                <span class="welcome-text">Hi, <strong>{{ user.username }}</strong></span>
+                <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-logout">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn-login">Login</a>
+                <a href="{% url 'signup' %}" class="btn-signup">Register</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+<div class="main-container">
+    {% block content %}{% endblock %}
+</div>
+
+<script src="{% static 'hospital/main.js' %}"></script>
+</body>
+</html>

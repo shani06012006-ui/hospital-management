@@ -1,0 +1,72 @@
+:root {
+    --primary: #4c559f;
+    --success: #10b981;
+    --bg: #f8fafc;
+    --text: #183769;
+}
+
+body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; color: var(--text); }
+
+.navbar { 
+    background: white; 
+    padding: 0.5rem 2rem; /* Reduced padding for a slimmer look */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+.nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+
+.nav-logo { 
+    height: 45px;           /* Set a specific height */
+    width: 45px;            /* Set a matching width for circular/square logos */
+    object-fit: cover;      /* Ensures the image doesn't stretch */
+    border-radius: 50%;     /* Optional: makes the logo circular like a profile pic */
+    margin-right: 12px;     /* Space between logo and text */
+    vertical-align: middle;
+    border: 2px solid var(--primary); /* Optional: adds a blue border around the logo */
+}
+
+.brand { 
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem; 
+    font-weight: 700; 
+    text-decoration: none; 
+    color: var(--text); 
+}
+
+.brand span { color: var(--primary); }
+
+.nav-links { display: flex; list-style: none; gap: 2rem; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; color: #0b285e; font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: red; }
+
+.hero { display: flex; align-items: center; padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; gap: 4rem; }
+.hero-text { flex: 1; }
+.hero-text h1 { font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.1; }
+.hero-text span { color: var(--primary); }
+
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.hero-img img {
+    width: 100%;            
+    max-width: 500px;       
+    height: 400px;          
+    object-fit: cover;     
+    border-radius: 24px;    
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.main-container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+
+.btn-main { background: var(--primary); color: white; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600; }
+.btn-logout { background: #fee2e2; color: #ef4444; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
+
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; }
+th { background: #f1f5f9; padding: 1rem; text-align: left; color: #d22d10; }
+td { padding: 1rem; border-bottom: 1px solid #f1f5f9; }

@@ -1,0 +1,26 @@
+{% extends 'hospital/base.html' %}
+{% block content %}
+<h2>Appointments</h2>
+<p><a href="{% url 'add_appointment' %}">Book Appointment</a></p>
+
+<table>
+    <tr>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Description</th>
+    </tr>
+    {% for app in appointments %}
+    <tr>
+        <td>{{ app.patient.name }}</td>
+        <td>{{ app.doctor.name }}</td>
+        <td>{{ app.date }}</td>
+        <td>{{ app.time }}</td>
+        <td>{{ app.description }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="5">No appointments yet.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}
