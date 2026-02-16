@@ -9,7 +9,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; color
 
 .navbar { 
     background: white; 
-    padding: 0.5rem 2rem; /* Reduced padding for a slimmer look */
+    padding: 0.5rem 2rem; 
     box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
     position: sticky; 
     top: 0; 
@@ -19,13 +19,12 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; color
 .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 
 .nav-logo { 
-    height: 45px;           /* Set a specific height */
-    width: 45px;            /* Set a matching width for circular/square logos */
-    object-fit: cover;      /* Ensures the image doesn't stretch */
-    border-radius: 50%;     /* Optional: makes the logo circular like a profile pic */
-    margin-right: 12px;     /* Space between logo and text */
+    height: 45px;           
+    width: 45px;            
+    border-radius: 50%;    
+    margin-right: 12px;     
     vertical-align: middle;
-    border: 2px solid var(--primary); /* Optional: adds a blue border around the logo */
+    border: 2px solid var(--primary); 
 }
 
 .brand { 
