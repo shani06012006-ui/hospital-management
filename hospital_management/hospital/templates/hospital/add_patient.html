@@ -1,17 +1,26 @@
 {% extends 'hospital/base.html' %}
 
 {% block content %}
-<h2>Add Patient</h2>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Patient</button>
-</form>
+<div class="page-header">
+    <h2>Book Appointment</h2>
+</div>
 
-<p>
-    <a href="{% url 'patient_list' %}">Back to Patients List</a> |
-    <a href="{% url 'home' %}">Back to Home</a>
-</p>
+<div class="form-card">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">
+            Book Appointment
+        </button>
+    </form>
+
+    <div class="action-buttons">
+        <a href="{% url 'appointment_list' %}" class="btn btn-outline">
+            Back to Appointments
+        </a>
+    </div>
+</div>
+
 {% endblock %}
-

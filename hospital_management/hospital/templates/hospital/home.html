@@ -5,11 +5,16 @@
 <div class="hero">
     <div class="hero-text">
         <h1>Care You Can <br><span>Trust.</span></h1>
+
         <p>Manage patients and appointments in one place.</p>
+
         <div class="cta-group">
-            <a href="{% url 'add_appointment' %}" class="btn-main">Book Now</a>
+            <a href="{% url 'add_appointment' %}" class="btn btn-primary">
+                Book Now
+            </a>
         </div>
     </div>
+
     <div class="hero-img">
         <img src="{% static 'hospital/images/home.jpg' %}" alt="Medical Staff">
     </div>

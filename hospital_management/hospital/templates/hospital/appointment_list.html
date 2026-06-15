@@ -1,7 +1,18 @@
 {% extends 'hospital/base.html' %}
+
 {% block content %}
+
 <h2>Appointments</h2>
-<p><a href="{% url 'add_appointment' %}">Book Appointment</a></p>
+
+<div class="action-buttons">
+    <a href="{% url 'add_appointment' %}" class="btn btn-primary">
+        Book Appointment
+    </a>
+
+    <a href="{% url 'home' %}" class="btn btn-outline">
+        Back to Home
+    </a>
+</div>
 
 <table>
     <tr>
@@ -11,6 +22,7 @@
         <th>Time</th>
         <th>Description</th>
     </tr>
+
     {% for app in appointments %}
     <tr>
         <td>{{ app.patient.name }}</td>
@@ -20,7 +32,10 @@
         <td>{{ app.description }}</td>
     </tr>
     {% empty %}
-    <tr><td colspan="5">No appointments yet.</td></tr>
+    <tr>
+        <td colspan="5">No appointments yet.</td>
+    </tr>
     {% endfor %}
 </table>
+
 {% endblock %}

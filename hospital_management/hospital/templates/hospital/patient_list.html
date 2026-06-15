@@ -3,10 +3,15 @@
 {% block content %}
 <h2>Patients List</h2>
 
-<p>
-    <a href="{% url 'add_patient' %}">Add Patient</a> |
-    <a href="{% url 'home' %}">Back to Home</a>
-</p>
+<div class="action-buttons">
+    <a href="{% url 'add_patient' %}" class="btn btn-primary">
+        Add Patient
+    </a>
+
+    <a href="{% url 'home' %}" class="btn btn-outline">
+        Back to Home
+    </a>
+</div>
 
 <table>
     <tr>
@@ -15,6 +20,7 @@
         <th>Doctor</th>
         <th>Illness</th>
     </tr>
+
     {% for patient in patients %}
     <tr>
         <td>{{ patient.name }}</td>
@@ -28,5 +34,5 @@
     </tr>
     {% endfor %}
 </table>
-{% endblock %}
 
+{% endblock %}
